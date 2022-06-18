@@ -16,9 +16,27 @@ Examples:
 str1 = 'Angela T: wrote about Spiderman, Miah B: no Spiderman, Adrian R: wrote about Spiderman'
 str2 = 'Tom B: no Spiderman, Justin N: no Spiderman, Emily B: wrote about Spiderman'
 ***********************************************************************/
+let spiderManWriters = (str) => {
+    let arr = str.split(', ')
+    let arr2 = []
+    for(let i = 0; i < arr.length; i++){
+    arr2.push(...arr[i].split(": "))
+}
 
-    // Your code here
-
+console.log(arr2)
+let writers = {}
+    for(let i = 1; i<arr2.length; i+=2){
+        if(arr2[i].includes("no Spiderman")){
+            writers[arr2[i-1]]=arr2[i]
+        }
+    }
+    console.log(writers)
+    return writers
+}
+str1 = 'Angela T: wrote about Spiderman, Miah B: no Spiderman, Adrian R: wrote about Spiderman'
+str2 = 'Tom B: no Spiderman, Justin N: no Spiderman, Emily B: wrote about Spiderman'
+spiderManWriters(str1)
+spiderManWriters(str2)
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try{
     module.exports = spiderManWriters;

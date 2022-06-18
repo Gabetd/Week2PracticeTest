@@ -27,7 +27,22 @@ newDice3(2); // 24
 
 ***********************************************************************/
 
-    // Your code here
+   let dynamicDice = (dice) => {
+    //take dice val and multiply it by number given in return function
+    return function (num2) {
+      // console.log(dice * num2)
+      return dice * num2
+    }
+
+   }
+   const newDice = dynamicDice(20); // returns a function
+   newDice(5); // 100
+
+   const newDice2 = dynamicDice(10); // returns a function
+   newDice2(5); // 50
+
+   const newDice3 = dynamicDice(12); // returns a function
+   newDice3(2); // 24
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try{

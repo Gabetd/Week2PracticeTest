@@ -19,8 +19,14 @@ manyArgs(1, 2, 5, 6) // 60
 
 
 ***********************************************************************/
+let manyArgs = (...nums) => {
+let accum = 1
+    for (let i = 0; i < nums.length; i++){
+        accum *= nums[i]
+    }
+    return accum
+}
 
-// Your code here
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try{

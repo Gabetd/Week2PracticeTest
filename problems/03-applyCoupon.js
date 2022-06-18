@@ -27,7 +27,31 @@ console.log(applyCoupon(20, wishList)); // => 78.4;
 
 *******************************************************************************/
 
-    // Your code here
+let applyCoupon = (disc, arr) => {
+    //go through arr and get list.price of everything
+    //push those proces to an array and sum them up
+    //multiply sum by discount / 100
+    let accum = 0
+    // let arr2 = []
+    for(let i = 0; i<arr.length; i++){
+        // arr2.push(arr[i].price)
+        accum += arr[i].price
+    }
+    console.log(accum)
+
+    return accum * ((100 - disc) / 100 )
+
+}
+wishList = [
+    {name: "Xbox", price: 80},
+    {name: "Bacon", price: 5},
+    {name: "Gummy Candies", price: 3},
+    {name: "SURGE soda 24 pack", price: 10}
+    ];
+
+
+console.log(applyCoupon(10, wishList)); // => 88.2;
+console.log(applyCoupon(20, wishList)); // => 78.4;
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS LINE**********************/
 try{
